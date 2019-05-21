@@ -29,7 +29,7 @@ requirements:
 kubernetes cluster, kubectl command-line tool, docker engine. 
 
                                                   -step 1 -
-create a docker file to meet the requirements, you can review the details in the "Docker file" in sumary will contain the postgres deployment with the requested configurationnd and heirloom-mailx:
+create a docker file to meet the requirements, you can review the details in the "Docker file" in sumary will contain the postgres deployment with the requested configuration and heirloom-mailx:
   - user: postgres
   - password: Aw3s0m3
   - Database: WORKSHOP
@@ -42,11 +42,12 @@ docker build -t digital:v4 .
 note: make sure you are in the same path of the Dockerfile
 
                                                   -step 2 -
-Once we have the image I submit to any repository where you will pull the image in my case I pushed to "container registry" from google cloud" 
+Once we have the image submit it to any repository from there you will pull the image in my case I pushed to "container registry" from google cloud
 
 or
 
-you can pull from if you want to avoid previous steps 
+you can pull ir from my personal repository if you want to avoid previous steps:
+
 docker pull gcr.io/formal-guru-208519/digital:v4
 docker pull gcr.io/formal-guru-208519/digital@sha256:12982026f4d70ebc20bcb3b449e317edbe474d388f0149019bbd74bad25eee7a
 
