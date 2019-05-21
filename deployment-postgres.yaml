@@ -1,0 +1,55 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: postgresdigital-volume
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-digital
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres-digital
+  template:
+    metadata:
+      labels:
+        app: postgres-digital
+    spec:
+      containers:
+        - name: postgres-digital
+          image: gcr.io/formal-guru-208519/digital:v4
+          lifecycle:
+            preStop:
+             exec:
+                command: ["/bin/sh", "-c" , "echo POD-EMERGENCY | mailx -v -s POD-WARNING -S smtp-use-starttls -S ssl-verify=ignore -S smtp-auth=login -S smtp=smtp://smtp.gmail.com:587 -S from=david.digital.test2@gmail.com -S smtp-auth-user=david.digital.test2@gmail.com -S smtp-auth-password=19821982DBc -S ssl-verify=ignore -S nss-config-dir=/etc/pki/nssdb/ david.angel.bonilla@gmail.com"]
+          ports:
+            - containerPort: 5432 
+          volumeMounts:
+            - name: postgresdigital-volume
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: postgresdigital-volume
+          persistentVolumeClaim:
+            claimName: postgresdigital-volume
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-digital-lb
+
+spec:
+  type: LoadBalancer
+  ports:
+   - port: 5432
+  selector:
+   app: postgres-digital
+
+
