@@ -18,7 +18,7 @@ Description: Postgres deployment with email alerting
 
                                                  -General Analysis-
 
-1 - Deploy the postgres container and deploy any monitoring tool to catch when the pod will stop (Eg: Prometheus,Stackdriver,appdynamycs,relyc,etc...) This will be the most common enterprise solution from my perspective.
+1 - Deploy the postgres container and any monitoring tool to catch when the pod will stop (Eg: Prometheus,Stackdriver,appdynamycs,relyc,etc...) This will be the most common enterprise solution from my perspective.
 
 2 - Deploy the postgres container with heirloom-mailx and use the smntp service from google to send emails and add a prestop handler in order to send an email before lost the pod. 
          
@@ -75,7 +75,7 @@ This will deploy our 3 components:
 -LoadBalancer to expose our db
 
                                                   -step 6 -
-Once we validate our pod and the deployment is healthy, we are going to test the "Aw3s0m3" password.
+Once we validate our pod and the deployment health, we are going to test the "Aw3s0m3" password.
 
 Run
 kubectl get service postgres-digital-lb
