@@ -1,10 +1,12 @@
                                                  -META DATA -
 Author: David Bonilla
+
 Created: 20/05/2019
+
 Description: Postgres deployment with email alerting
 
                                                  -Requirements-
-Requirements:
+                                                 
 1: Write a kubernetes object that will initialize a postgres instance with the below configuration
   user: postgres
   password: Aw3s0m3
@@ -15,8 +17,9 @@ Requirements:
 3: Bonus: create a table already inside the DB
 
                                                  -General Analysis-
-General Anylysis:
+
 1 - Deploy the postgres container and deploy any monitoring tool to catch when the pod will stop (Eg: Prometheus,Stackdriver,appdynamycs,relyc,etc...) This will be the most common enterprise solution from my perspective.
+
 2 - Deploy the postgres container with heirloom-mailx and use the smntp service from google to send emails and add a prestop handler in order to send an email before lost the pod. 
          
 
@@ -76,15 +79,10 @@ after be connected to the WORKSHOP DB lets validate a table already created with
 run
 \c postgres
 type password if need it 
+
 run
 select * from games;
-you will see an output like this:
 
-postgres=# select * from games;
-      game      | category
-----------------+----------
- Chrono Trigger | (RPG)
-(1 row)
 
 Type: ctrl + d in order to exit.
 
