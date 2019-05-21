@@ -1,8 +1,8 @@
-############################################################
+##############################################
 Author: David Bonilla
 Created: 20/05/2019
 Description: Postgres deployment with email alerting
-############################################################
+##############################################
 
 Requirements:
 1: Write a kubernetes object that will initialize a postgres instance with the below configuration
@@ -14,11 +14,11 @@ Requirements:
 
 3: Bonus: create a table already inside the DB
 
-############################################################
+##############################################
 General Anylysis:
 1 - Deploy the postgres container and deploy any monitoring tool to catch when the pod will stop (Eg: Prometheus,Stackdriver,appdynamycs,relyc,etc...) This will be the most common enterprise solution from my perspective.
 2 - Deploy the postgres container with heirloom-mailx and use the smntp service from google to send emails and add a prestop handler in order to send an email before lost the pod. 
-############################################################
+################################################
 
 This document will follow the second option.
 
