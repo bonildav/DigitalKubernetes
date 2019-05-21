@@ -35,8 +35,10 @@ create a docker file to meet the requirements, you can review the details in the
   - Database: WORKSHOP
   - create a table already inside the DB
 
-in order to create the image from the docker command run the below command:
+in order to create the image run the below command:
+
 docker build -t digital:v4 .
+
 note: make sure you are in the same path of the Dockerfile
 
                                                   -step 2 -
