@@ -53,6 +53,9 @@ docker pull gcr.io/formal-guru-208519/digital@sha256:12982026f4d70ebc20bcb3b449e
 
                                                   
                                                   -step 3 -
+Validate the image value:
+
+image: gcr.io/formal-guru-208519/digital:v4
                                                   
 Modify email value in deployment-posgres.yamls in order to get the email notifications
 
