@@ -50,7 +50,9 @@ docker pull gcr.io/formal-guru-208519/digital@sha256:12982026f4d70ebc20bcb3b449e
 
                                                   
                                                   -step 3 -
+                                                  
 Modify email value in deployment-posgres.yamls in order to get the emails
+
 exec:
     command: ["/bin/sh", "-c" , "echo POD-EMERGENCY | mailx -v -s POD-WARNING -S smtp-use-starttls -S ssl-verify=ignore -S smtp-auth=login -S smtp=smtp://smtp.gmail.com:587 -S from=david.digital.test2@gmail.com -S smtp-auth-user=david.digital.test2@gmail.com -S smtp-auth-password=19821982DBc -S ssl-verify=ignore -S nss-config-dir=/etc/pki/nssdb/  <email@digitalonus.com>"]
 
