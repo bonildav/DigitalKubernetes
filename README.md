@@ -104,7 +104,7 @@ Clean all the deployment
 kubectl delete -f deployment-posgres.yamls
 
 
-Many thanks may stuff I could did it better unfortunately my job and the deadline killed me. 
+Many thanks many things I could do it better unfortunately my job and the deadline killed me. 
 
 I´ll really appreciate your feedback.
 
