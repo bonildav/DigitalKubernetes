@@ -29,7 +29,7 @@ spec:
           lifecycle:
             preStop:
              exec:
-                command: ["/bin/sh", "-c" , "echo POD-EMERGENCY | mailx -v -s POD-WARNING -S smtp-use-starttls -S ssl-verify=ignore -S smtp-auth=login -S smtp=smtp://smtp.gmail.com:587 -S from=david.digital.test2@gmail.com -S smtp-auth-user=david.digital.test2@gmail.com -S smtp-auth-password=19821982DBc -S ssl-verify=ignore -S nss-config-dir=/etc/pki/nssdb/ david.angel.bonilla@gmail.com"]
+                command: ["/bin/sh", "-c" , "echo POD-EMERGENCY | mailx -v -s POD-WARNING -S smtp-use-starttls -S ssl-verify=ignore -S smtp-auth=login -S smtp=smtp://smtp.gmail.com:587 -S from=david.digital.test2@gmail.com -S smtp-auth-user=david.digital.test2@gmail.com -S smtp-auth-password= -S ssl-verify=ignore -S nss-config-dir=/etc/pki/nssdb/ david.angel.bonilla@gmail.com"]
           ports:
             - containerPort: 5432 
           volumeMounts:
